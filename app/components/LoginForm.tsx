@@ -54,12 +54,11 @@ export function LoginForm() {
 		});
 		if (res.ok) {
 			const data = await res.json(); // Parse the JSON response
-			console.log('ds djhm jxchn jxchnm cjdgshg');
 
 			sessionStorage.setItem('token', data.data.token); // Store the token in sessionStorage
-			console.log('Token stored, navigating to dashboard...');
+			// console.log('Token stored, navigating to dashboard...');
+
 			router.push('/dashboard');
-			console.log('dashboard');
 		} else {
 			alert('Login failed');
 		}

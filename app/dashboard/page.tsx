@@ -14,15 +14,13 @@ export default function Dashboard() {
 
 	// const token = sessionStorage.getItem('token');
 
-	console.log('Token in Dashboard:', token); // Debug log
-
 	useEffect(() => {
 		// Access sessionStorage only on the client side
 		const storedToken = sessionStorage.getItem('token');
 		setToken(storedToken);
 
 		if (!storedToken) {
-			console.log('No token found, redirecting to login');
+			// console.log('No token found, redirecting to login');
 			router.push('/login'); // Redirect to login if no token is found
 			return;
 		}
@@ -34,8 +32,6 @@ export default function Dashboard() {
 			});
 
 			const data = await res.json();
-
-			console.log('Token in Dashboard 2:', storedToken); // Debug log
 			if (res.ok) {
 				setUser(data.data.user);
 				console.log('logged in');

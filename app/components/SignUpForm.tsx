@@ -56,9 +56,9 @@ export function SignUpForm() {
 			credentials: 'include',
 			body: JSON.stringify(values),
 		});
+
 		if (res.ok) {
 			const data = await res.json(); // Parse the JSON response
-			console.log('dsjdgshg');
 
 			sessionStorage.setItem('token', data.data.token); // Store the token in sessionStorage
 			router.push('/dashboard');
