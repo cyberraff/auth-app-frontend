@@ -31,7 +31,7 @@ const formSchema = z.object({
 });
 
 const url = 'https://auth-app-backend-xwg2.onrender.com/api/v1/users/register';
-const devUrl = 'http://localhost:3000/api/v1/users/register';
+// const devUrl = 'http://localhost:3000/api/v1/users/register';
 
 export function SignUpForm() {
 	const router = useRouter();
@@ -47,7 +47,7 @@ export function SignUpForm() {
 
 	// 2. Define a submit handler.
 	async function onSubmit(values: z.infer<typeof formSchema>) {
-		const res = await fetch(devUrl, {
+		const res = await fetch(url, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

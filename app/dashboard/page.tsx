@@ -10,7 +10,7 @@ export default function Dashboard() {
 	const router = useRouter();
 
 	const url = 'https://auth-app-backend-xwg2.onrender.com/api/v1/users/me';
-	const devUrl = 'http://localhost:3000/api/v1/users/me';
+	// const devUrl = 'http://localhost:3000/api/v1/users/me';
 
 	// const token = sessionStorage.getItem('token');
 
@@ -27,7 +27,7 @@ export default function Dashboard() {
 			return;
 		}
 		const getMe = async () => {
-			const res = await fetch(devUrl, {
+			const res = await fetch(url, {
 				headers: {
 					Authorization: `Bearer ${storedToken}`, // Attach token here
 				},
